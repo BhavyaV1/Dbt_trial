@@ -33,4 +33,4 @@ jobs:
     - name: Run stitch_job.py
       run: |
        python -m pip install --upgrade pip
-       python workflows/stitch_job.py 
+       python .github/workflows/stitch_job.py 
