@@ -38,6 +38,7 @@ jobs:
        
     - name: Run power_bi.py
       run: |
+       pip install msal
        python .github/workflows/power_bi.py       
        
     - name: Run dbt.py
