@@ -19,7 +19,7 @@ on:
 
 
 permissions:
-  security-events: $(API Token)
+  security-events: '661127692a6560a93104e7700e59e0a6b336fc8d'
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
