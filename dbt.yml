@@ -1,15 +1,1 @@
-import requests
- 
-url = https://cloud.getdbt.com/api/v2/accounts/82119/jobs/210238/run/
- 
-payload={'cause': 'Test dbt Job'}
-files=[
- 
-]
-headers = {
-  'Authorization': 'Token 661127692a6560a93104e7700e59e0a6b336fc8d'
-}
- 
-response = requests.request("POST", url, headers=headers, data=payload, files=files)
- 
-print(response.text)
+
