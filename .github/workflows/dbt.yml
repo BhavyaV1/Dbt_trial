@@ -3,37 +3,40 @@
 # Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
-trigger:
-- main
+run-name: Python_workflow
 
-variables:
-  DBT_CLOUD_API_TOKEN: $(API Token)
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
-stages:
-- stage: Build
+  schedule: 
+    # Daily at 5:35 UTC
+    - cron: '35 5 * * *'
 
-  jobs:
-  - job: setup
-    pool:
-     vmImage: 'ubuntu-latest'
-    strategy:
-      matrix:
-        Python37:
-          python.version: '3.7'
+
+permissions:
+  security-events: $(API Token)
+  
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
     steps:
-    - task: UsePythonVersion@0
-      inputs:
-        versionSpec: '$(python.version)'
-      displayName: 'Use Python $(python.version)'
+    - uses: actions/checkout@v2
 
-    - script: |
-        python -m pip install --upgrade pip
-        pip install requests
-      displayName: 'Install dependencies'
-      
-  - job: Stich
-    dependsOn: setup
-    condition: succeeded('setup')
-    steps:
-    - script: 
-        stitch_job.py
+    # Install Python and pip
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.7'
+
+   #Install dependecies andrun stitch_job.py
+    - name: Run stitch_job.py
+      run: |
+       python -m pip install --upgrade pip
+       python stitch_job.py 
