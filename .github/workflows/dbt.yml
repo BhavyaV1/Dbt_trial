@@ -34,14 +34,15 @@ jobs:
       run: |
        python -m pip install --upgrade pip
        pip install requests
-       python .github/workflows/stitch_job.py 
+       python .github/workflows/stitch_job.py
+       
+    - name: Run power_bi.py
+      run: |
+       python .github/workflows/power_bi.py       
        
     - name: Run dbt.py
       run: |
        python .github/workflows/dbt.py
            
-    - name: Run power_bi.py
-      run: |
-       python .github/workflows/power_bi.py
-       
+   
        
