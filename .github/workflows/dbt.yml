@@ -39,5 +39,9 @@ jobs:
     - name: Run dbt.py
       run: |
        python .github/workflows/dbt.py
+           
+    - name: Run power_bi.py
+      run: |
+       python .github/workflows/power_bi.py
        
        
