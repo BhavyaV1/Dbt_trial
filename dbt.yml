@@ -7,7 +7,7 @@ trigger:
 - main
 
 variables:
-  DBT_CLOUD_API_TOKEN: $(API Token)
+  DBT_CLOUD_API_TOKEN: '661127692a6560a93104e7700e59e0a6b336fc8d'
 
 stages:
 - stage: Build
