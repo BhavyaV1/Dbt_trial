@@ -9,7 +9,7 @@ ACCOUNT_ID = 82119
 JOB_ID = 210238
 
 # Store your dbt Cloud API token securely in your workflow tool
-API_KEY = os.getenv('DBT_CLOUD_API_TOKEN')
+API_KEY = '661127692a6560a93104e7700e59e0a6b336fc8d'
 
 # These are documented on the dbt Cloud API docs
 
