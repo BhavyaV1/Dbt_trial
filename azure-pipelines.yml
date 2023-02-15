@@ -41,7 +41,7 @@ stages:
     condition: succeeded('setup')
     steps:
     - script: 
-        stitch_job.py
+        python stitch_job.py
 
 
   - job: DBT
@@ -49,7 +49,7 @@ stages:
     condition: succeeded('stich')
     steps:
     - script: 
-       dbt.py
+       python dbt.py
         
         
   - job: Power_Bi
@@ -57,4 +57,4 @@ stages:
     condition: succeeded('DBT')
     steps:
     - script: 
-        power_bi.py
+        python power_bi.py
