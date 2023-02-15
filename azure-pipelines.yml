@@ -10,6 +10,12 @@
 
 trigger:
 - main
+schedules:
+ - cron: "0 8 * * *"
+   displayName: Runs at 8
+   branches:
+    include:
+     - daily-run
 
 variables:
   DBT_CLOUD_API_TOKEN: $(API Token)
