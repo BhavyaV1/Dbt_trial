@@ -31,7 +31,7 @@ def _trigger_job() -> int:
             # Optionally pass a description that can be viewed within the dbt Cloud API.
             # See the API docs for additional parameters that can be passed in,
             # including `schema_override`
-            'cause': f"Triggered by bhavya's workflow!",
+            'cause': f"Triggered by Bhavya's workflow!",
         }
     )
 
