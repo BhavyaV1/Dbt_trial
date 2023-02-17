@@ -1,6 +1,6 @@
 import requests
 import msal
-from creds import username, password
+#from creds import username, password
 # creds file just contains the following:
 # username = 'your email e.g. sunny.sharma@datalytyx.com'
 # password = 'your password e.g. Notachancethisworks!'
