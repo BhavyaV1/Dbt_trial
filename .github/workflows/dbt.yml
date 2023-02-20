@@ -19,8 +19,11 @@ on:
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
+  deployment:
     runs-on: ubuntu-latest
+    environment: 
+      name: production
+      url: https://github.com
 
     steps:
     - uses: actions/checkout@v2
