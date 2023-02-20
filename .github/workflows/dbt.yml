@@ -21,32 +21,30 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: deployment
-    concurrency: deployment
+
     steps:
-      - name: deploy
-        # ...deployment-specific steps
+    - uses: actions/checkout@v2
 
 
     # Install Python and pip
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
          python-version: '3.7'
 
    #Install dependecies andrun stitch_job.py
-      - name: Run stitch_job.py
-        run: |
+    - name: Run stitch_job.py
+      run: |
          python -m pip install --upgrade pip
          pip install requests
          python .github/workflows/stitch_job.py
        
-      - name: Run dbt.py
-        run: |
+    - name: Run dbt.py
+      run: |
          python .github/workflows/dbt.py         
        
-      - name: Run power_bi.py
-        run: |
+    - name: Run power_bi.py
+      run: |
          pip install msal
          python .github/workflows/power_bi.py       
        
